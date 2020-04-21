@@ -18,8 +18,8 @@ const host = 'http://localhost'
 require('dotenv/config');
 require('./auth/auth');
 
-app.use(cors({credentials: true, origin: true}));
 app.use(bodyParser.json());
+app.use(cors({credentials: true, origin: true}));
 app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -78,7 +78,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(port, function() {
+app.listen(process.env.PORT || port, function() {
     console.log(`listening on port 8000! Go to ${host}:${port}`);
 });
 
