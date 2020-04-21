@@ -26,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(compression());
 app.use(helmet());
-
+app.use(cors({credentials: true, origin: true}));
 
 const authRoute = require('./routes/auth_routes');
 const usersRoute = require('./routes/user');
