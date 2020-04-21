@@ -21,7 +21,6 @@ require('dotenv/config');
 require('./auth/auth');
 
 app.use(bodyParser.json());
-app.use(cors({credentials: true, origin: true}));
 app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
