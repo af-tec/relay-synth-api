@@ -7,8 +7,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const winston = require('winston');
-const https = require('https');
-const fs = require('fs');
 const passport = require('passport');
 const compression = require('compression');
 const helmet = require('helmet');
@@ -20,13 +18,13 @@ const host = 'http://localhost'
 require('dotenv/config');
 require('./auth/auth');
 
+app.use(cors({credentials: true, origin: true}));
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(compression());
 app.use(helmet());
-app.use(cors({credentials: true, origin: true}));
 
 const authRoute = require('./routes/auth_routes');
 const usersRoute = require('./routes/user');
