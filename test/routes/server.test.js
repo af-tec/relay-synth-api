@@ -22,7 +22,7 @@ describe('home route', () => {
         .end((err, res) => {
             if (err) done(err);
             expect(res.body).be.deep.equal({
-                message:  `Hi! Server is listening on https://localhost:8000`
+                message:  `API is live`
             })
             done();
         })

@@ -44,7 +44,7 @@ app.use('/examples', passport.authenticate('jwt', { session : false }),examplesR
 app.use('/leaderboard',passport.authenticate('jwt', { session : false }), leaderboardRoute)
 app.get(`/`, (req, res) => {
     res.send({
-        message: `Hi! Server is listening on ${host}:${port}`
+        message: `API is live`
     });
 });
 

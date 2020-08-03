@@ -39,6 +39,10 @@ describe('Valid Synth', function() {
             synth2.validate(function() {
                 expect(synth2.parameters).to.be.a('Object');
                 expect(synth2.parameters.oscillator.type).to.equal('sawtooth');
+                expect(synth2.parameters.envelope.attack).to.equal(0.25);
+                expect(synth2.parameters.envelope.decay).to.equal(0.25);
+                expect(synth2.parameters.envelope.sustain).to.equal(1.0);
+                expect(synth2.parameters.envelope.release).to.equal(1.0);
                 done();
             })
         })

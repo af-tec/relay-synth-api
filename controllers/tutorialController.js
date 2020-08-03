@@ -1,6 +1,5 @@
 const Tutorial = require('../models/Tutorial');
-const User = require('../models/User');
-const mongoose = require('mongoose');
+
 
 
 exports.getTutorials = async(req, res) => {

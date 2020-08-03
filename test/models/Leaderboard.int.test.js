@@ -6,9 +6,6 @@ const app = require('../../server');
 
 chai.use(chaiHttp);
 
-
-
-
 describe('Leaderboards route /leaderboard/', function() {
     it('should return a valid 200 response to this route when a token is set', function(done) {
         chai.request(app)
