@@ -13,7 +13,6 @@ const helmet = require('helmet');
 
 const app = express();
 const port = 8000;
-const host = 'http://localhost'
 
 require('dotenv/config');
 require('./auth/auth');
@@ -78,8 +77,8 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(process.env.PORT || port, function() {
-    console.log(`Up and running on ${process.env.PORT}`);
+app.listen(process.env.APP_PORT || port, function() {
+    console.log(`Up and running on ${process.env.APP_PORT}`);
 });
 
 module.exports = app;
